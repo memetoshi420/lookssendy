@@ -119,11 +119,11 @@ body {
 
 .social-links {
     display: grid;
-    grid-template-columns: repeat(2, 80px);
-    gap: 30px;
+    grid-template-columns: repeat(2, 120px);
+    gap: 40px;
     justify-content: end;
     margin-left: 0;
-    margin-right: 400px;
+    margin-right: 600px;
     grid-column: 1;
     justify-self: end;
 }
@@ -222,10 +222,10 @@ body {
 .twitter-feed-container {
     grid-column: 3;
     justify-self: start;
-    margin-left: 400px;
+    margin-left: 600px;
     margin-right: 0;
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 600px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -234,8 +234,6 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     position: relative;
-    --scrollbar-width: 8px;
-    --mask-height: 32px;
 }
 
 .twitter-feed {
