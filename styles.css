@@ -8,24 +8,24 @@
 
 html, body {
     width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+    min-height: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #ffff7a 0%, #3fc6c3 100%) fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
+    height: auto;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
-    background: linear-gradient(180deg, #ffff7a 0%, #3fc6c3 100%) fixed;
-    background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    background: transparent;
 }
 
 #logo-container {
@@ -358,18 +358,33 @@ iframe#twitter-widget-0 {
 }
 
 @media screen and (max-width: 768px) {
-    body {
+    html, body {
+        min-height: 100vh;
         height: auto;
-        overflow-y: auto;
-        overflow-x: hidden;
+        background-attachment: fixed;
+        -webkit-background-attachment: fixed;
+        position: relative;
     }
 
+    /* Force the main content to take up full height */
     .main-content {
-        display: flex;
-        flex-direction: column;
+        min-height: 100vh;
         height: auto;
-        padding: 20px;
         position: relative;
+        z-index: 1;
+    }
+
+    /* Add a pseudo-element as backup gradient */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #ffff7a 0%, #3fc6c3 100%);
+        z-index: -1;
+        pointer-events: none;
     }
 
     /* 1. Logo */
