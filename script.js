@@ -122,21 +122,13 @@ catAnimation.addEventListener('error', (error) => {
 const addressContainer = document.querySelector('.address-container');
 const contractAddress = '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr';
 
-// Add copied message element
-const copiedMessage = document.createElement('div');
-copiedMessage.className = 'copied-message';
-copiedMessage.textContent = 'Copied! 🎉';
-addressContainer.appendChild(copiedMessage);
-
 addressContainer.addEventListener('click', async () => {
     try {
         await navigator.clipboard.writeText(contractAddress);
-        addressContainer.classList.add('copied');
+        const copiedMessage = document.querySelector('.copied-message');
         copiedMessage.classList.add('show');
         
-        // Remove animation classes after they complete
         setTimeout(() => {
-            addressContainer.classList.remove('copied');
             copiedMessage.classList.remove('show');
         }, 1500);
     } catch (err) {

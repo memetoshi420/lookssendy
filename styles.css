@@ -121,9 +121,6 @@ body {
     grid-template-columns: repeat(2, 6vw);
     gap: 2vw;
     justify-content: end;
-    margin-right: 22vw;
-    grid-column: 1;
-    justify-self: end;
 }
 
 .social-links a:last-child {
@@ -220,7 +217,7 @@ body {
 .twitter-feed-container {
     grid-column: 3;
     justify-self: start;
-    margin-left: 22vw;
+    margin-left: 0;
     margin-right: 0;
     width: 24vw;
     height: 65vh;
@@ -318,5 +315,155 @@ body {
 iframe#twitter-widget-0 {
     width: 100% !important;
     height: 100% !important;
+}
+
+.mobile-cat {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+}
+
+.side-content-left {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20vw;
+    margin-top: -35vh;
+}
+
+.side-content-right {
+    grid-column: 3;
+    grid-row: 2;
+    margin-left: 20vw;
+    margin-top: -35vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        position: relative;
+    }
+
+    /* 1. Logo */
+    #logo-container {
+        position: relative;
+        width: 85vw;
+        height: 25vh;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 4vh auto;
+    }
+
+    /* 2. Static Cat Image */
+    #animation-container {
+        display: none;
+    }
+
+    .mobile-cat {
+        display: block !important;
+        width: 80vw;
+        margin: 0 auto 2vh auto;
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+    }
+
+    /* 3. Social Links */
+    .side-content-left {
+        width: 100%;
+        padding-right: 0;
+        margin: 4vh 0;
+        order: 3;
+    }
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(3, 20vw);
+        width: 90vw;
+        gap: 3vw;
+        margin: 4vh auto;
+        justify-content: center;
+    }
+
+    .social-links a:last-child {
+        grid-column: auto;
+        margin-top: 0;
+    }
+
+    .social-bubble {
+        width: 20vw;
+        height: 20vw;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-bubble img {
+        width: 50%;
+        height: 50%;
+        filter: brightness(0) invert(1);
+    }
+
+    /* 4. Twitter Widget */
+    .side-content-right {
+        width: 100%;
+        padding-left: 0;
+        order: 4;
+    }
+
+    .twitter-feed-container {
+        width: 90vw;
+        height: 60vh;
+        margin: 4vh auto;
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+
+    /* 5. Pills */
+    .bottom-buttons {
+        position: relative;
+        width: 90vw;
+        margin: 4vh auto;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        order: 5;
+    }
+
+    .buy-button, .address-container {
+        width: 100%;
+        text-align: center;
+        font-size: 5vw;
+        padding: 2vh 4vw;
+    }
+
+    .address {
+        font-size: 5vw;
+    }
+
+    /* Reset all desktop-specific positioning */
+    .side-content-left, .side-content-right {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
 }
  
