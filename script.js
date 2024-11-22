@@ -120,7 +120,7 @@ catAnimation.addEventListener('error', (error) => {
 
 // Copy address functionality
 const addressContainer = document.querySelector('.address-container');
-const contractAddress = '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr';
+const contractAddress = '';
 
 addressContainer.addEventListener('click', async () => {
     try {
